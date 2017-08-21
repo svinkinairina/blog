@@ -7,16 +7,35 @@
 	<h1><a href="">Изучение Django</a></h1>	
 	</div>
 
+ {% for post in posts %}
+        <div>
+            <p>published: {{ post.published_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+
 	<div>
-	 <p>опубликован: 16.08.2017, 15:30</p>
+	 published: {{ post.published_date }}
 	 <h2><a href="">Мой первй пост</a></h2>	
 	 <p>Никогда ничего не переводитете через яндекс переводчик, а то узнаете, как купить протеин, программы и как дети украшают юбку завода</p>
 	</div>
 
+ {% for post in posts %}
+        <div>
+            <p>published: {{ post.published_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+    
 	<div>
-		<p>опубликован: 16.08.2017, 16:00</p>
+		{% for post in posts %}
+        {{ post }}
+    {% endfor %}
 		<h2><a href="">Мой второй пост</a></h2>
 		<p>Дети по прежнему украшают юбку завода</p>
 	</div>
+
 </body>
 </html>
